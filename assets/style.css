@@ -421,3 +421,15 @@ a.btn:not(.line):active { transform: translateY(2px); box-shadow: 0 2px 6px rgba
 .tiers td { font-family: var(--latin); }
 .tiers { border-spacing: 0 4px; }
 .tiers th, .tiers td { padding: 7px 14px; vertical-align: middle; }
+
+/* ---------- トップのファーストビュー（今も、未来も） ---------- */
+.hero { padding-block: 72px 64px; overflow: hidden; }
+.hero-copy + .hero-scroll { margin-top: 48px; }
+.hero-copy { font-size: 40px; line-height: 1.42; letter-spacing: .06em; font-weight: 500; }
+.hero-copy > span { display: block; }
+.hero-now { color: var(--ink); }
+.hero-future { color: var(--sage-ink); padding-left: 1.2em; }
+.hero-rest { font-size: 26px; line-height: 1.6; margin-top: 10px; }
+.hero-scroll { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; text-decoration: none; letter-spacing: .08em; padding-bottom: 4px; border-bottom: 1px solid var(--ink); }
+.hero-scroll svg.i { width: 16px; height: 16px; transform: rotate(90deg); }
+@media (max-width: 374px) { .hero-copy { font-size: 35px; } .hero-rest { font-size: 23px; } }
