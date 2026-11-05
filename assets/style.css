@@ -451,3 +451,30 @@ a.btn:not(.line):active { transform: translateY(2px); box-shadow: 0 2px 6px rgba
 .sec:not(.band) .more { background: var(--band); }
 .more > .facts-t, .more > .cp-notes, .more > .caution { margin-inline: 6px; }
 .more > .caution { margin-bottom: 14px; }
+
+/* 優先劣後の割合バー（センス・オーナーズ） */
+.reason > div:has(> .split) { flex: 1; }
+.split { margin: 14px 0 0; }
+.split-bar { display: flex; height: 34px; border-radius: 9999px; overflow: hidden; font-size: 11.5px; line-height: 34px; text-align: center; }
+.split-bar span { white-space: nowrap; }
+.split-bar .s-inv { background: var(--sage-soft); color: var(--sage-ink); }
+.split-bar .s-sub { background: var(--sage-deep); color: #fff; }
+.split-legend { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; font-size: 11.5px; color: var(--sub); line-height: 1.6; }
+.split-legend b { color: var(--ink); font-weight: 500; }
+.split-legend > span:last-child { text-align: right; }
+
+/* ---------- 理由2・3の図（役割分担・出し合い） ---------- */
+.timebox + .reasons { margin-top: 10px; }
+.reasons + .timebox + .reasons + .timebox { margin-bottom: 10px; }
+.roles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-inline: 4px; }
+.role-col { background: var(--band); border-radius: 14px; padding: 16px 10px 14px; text-align: center; font-size: 13px; }
+.timebox .role-col .ic { width: 44px; height: 44px; margin: 0 auto 6px; display: grid; place-content: center; border-radius: 50%; background: var(--bg); color: var(--ink); }
+.timebox .role-col.me .ic { background: var(--sage); color: #fff; }
+.role-col b { display: block; font-weight: 500; margin-bottom: 6px; }
+.role-col ul { list-style: none; margin: 0; padding: 0; font-size: 12px; line-height: 1.8; color: var(--sage-ink); }
+.pool { display: grid; justify-items: center; gap: 8px; }
+.pool-coins { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.pool-coins span { width: 46px; height: 46px; border-radius: 50%; display: grid; place-content: center; background: var(--band); font-family: var(--latin); font-size: 10.5px; font-weight: 500; letter-spacing: 0; color: var(--ink); }
+.pool-arrow svg.i { width: 18px; height: 18px; transform: rotate(90deg); color: var(--sage-ink); }
+.pool-goal { display: grid; justify-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; }
+.timebox .pool-goal .ic { width: 52px; height: 52px; display: grid; place-content: center; border-radius: 50%; background: var(--sage); color: #fff; }
