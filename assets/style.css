@@ -12,6 +12,7 @@
   --sage: #81b4ad;       /* 差し色 */
   --sage-ink: #5f9790;   /* 差し色の文字 */
   --sage-soft: #e7f0ee;
+  --sage-deep: #4a7d76;  /* 公式サイトへのボタン（白文字で読める濃さ） */
   --terra: #b86b5b;      /* 注意の文字 */
   --terra-soft: #f6ebe7; /* 注意の下地 */
   --gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
@@ -134,10 +135,10 @@ svg.i { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-widt
 .btn-note { font-size: 11px; color: var(--sub); text-align: center; margin: 8px 0 0; line-height: 1.8; }
 .btn-note a { color: var(--sage-ink); text-decoration: underline; text-underline-offset: 3px; }
 /* 公式サイトへのボタン：押せる場所だとわかるように、右端の矢印・影・押したときの沈み込み */
-a.btn:not(.line) { position: relative; padding-inline: 58px; box-shadow: 0 6px 16px rgba(28, 28, 28, .22); transition: transform .15s, box-shadow .15s, background-color .15s; -webkit-tap-highlight-color: transparent; }
-a.btn:not(.line)::after { content: ""; position: absolute; right: 10px; top: 50%; width: 38px; height: 38px; margin-top: -19px; border-radius: 50%; background: var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px no-repeat; }
-a.btn:not(.line):active { transform: translateY(2px); box-shadow: 0 2px 6px rgba(28, 28, 28, .2); background-color: #3a3a3a; }
-@media (hover: hover) { a.btn:not(.line):hover { background-color: #3a3a3a; } }
+a.btn:not(.line) { background: var(--sage-deep); position: relative; padding-inline: 58px; box-shadow: 0 6px 18px rgba(74, 125, 118, .28); transition: transform .15s, box-shadow .15s, background-color .15s; -webkit-tap-highlight-color: transparent; }
+a.btn:not(.line)::after { content: ""; position: absolute; right: 10px; top: 50%; width: 38px; height: 38px; margin-top: -19px; border-radius: 50%; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a7d76' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px no-repeat; }
+a.btn:not(.line):active { transform: translateY(2px); box-shadow: 0 2px 6px rgba(74, 125, 118, .25); background-color: #3f6c66; }
+@media (hover: hover) { a.btn:not(.line):hover { background-color: #3f6c66; } }
 .motion a.btn:not(.line)::after { animation: nudge 1.8s ease-in-out infinite; }
 @keyframes nudge { 0%, 60%, 100% { transform: none; } 30% { transform: translateX(4px); } }
 
@@ -433,3 +434,20 @@ a.btn:not(.line):active { transform: translateY(2px); box-shadow: 0 2px 6px rgba
 .hero-scroll { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; text-decoration: none; letter-spacing: .08em; padding-bottom: 4px; border-bottom: 1px solid var(--ink); }
 .hero-scroll svg.i { width: 16px; height: 16px; transform: rotate(90deg); }
 @media (max-width: 374px) { .hero-copy { font-size: 35px; } .hero-rest { font-size: 23px; } }
+
+/* ---------- 目次（TORCHESページ） ---------- */
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+.toc { padding-block: 8px 52px; }
+.toc .eyebrow { margin-bottom: 14px; }
+.toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; display: grid; gap: 2px; }
+.toc li { counter-increment: toc; }
+.toc li a { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; min-height: 48px; text-decoration: none; font-size: 14.5px; letter-spacing: .05em; }
+.toc li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--latin); font-weight: 300; font-size: 12px; letter-spacing: .08em; color: var(--sage-ink); }
+.toc li a span { min-width: 0; line-height: 1.5; }
+.toc li a em { font-style: normal; font-size: 10.5px; letter-spacing: .06em; color: var(--terra); background: var(--terra-soft); border-radius: 99px; padding: 2px 9px; margin-left: 8px; vertical-align: 2px; }
+.toc li a svg.i { width: 14px; height: 14px; color: var(--sub); transform: rotate(90deg); transition: transform .3s; }
+.toc li a:active svg.i { transform: rotate(90deg) translateX(3px); }
+
+.sec:not(.band) .more { background: var(--band); }
+.more > .facts-t, .more > .cp-notes, .more > .caution { margin-inline: 6px; }
+.more > .caution { margin-bottom: 14px; }
