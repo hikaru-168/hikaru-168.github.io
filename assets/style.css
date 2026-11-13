@@ -453,8 +453,7 @@ a.btn:not(.line):active { transform: translateY(2px); box-shadow: 0 2px 6px rgba
 .more > .caution { margin-bottom: 14px; }
 
 /* 優先劣後の割合バー（センス・オーナーズ） */
-.reason > div:has(> .split) { flex: 1; }
-.split { margin: 14px 0 0; }
+.split { margin: 4px 4px 0; }
 .split-bar { display: flex; height: 34px; border-radius: 9999px; overflow: hidden; font-size: 11.5px; line-height: 34px; text-align: center; }
 .split-bar span { white-space: nowrap; }
 .split-bar .s-inv { background: var(--sage-soft); color: var(--sage-ink); }
@@ -478,3 +477,19 @@ a.btn:not(.line):active { transform: translateY(2px); box-shadow: 0 2px 6px rgba
 .pool-arrow svg.i { width: 18px; height: 18px; transform: rotate(90deg); color: var(--sage-ink); }
 .pool-goal { display: grid; justify-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; }
 .timebox .pool-goal .ic { width: 52px; height: 52px; display: grid; place-content: center; border-radius: 50%; background: var(--sage); color: #fff; }
+
+/* 優先劣後の例（値下がりしたときの図） */
+.split-bar .s-loss { background: repeating-linear-gradient(135deg, var(--terra-soft) 0 6px, #fff 6px 10px); color: var(--terra); }
+.pp-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 12px; font-size: 11px; color: var(--sub); margin: -2px 0 12px; }
+.pp-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
+.pp-legend i.s-inv { background: var(--sage-soft); box-shadow: inset 0 0 0 1px var(--sage); }
+.pp-legend i.s-sub { background: var(--sage-deep); }
+.pp-legend i.s-loss { background: repeating-linear-gradient(135deg, var(--terra-soft) 0 3px, #fff 3px 5px); box-shadow: inset 0 0 0 1px var(--terra-soft); }
+.pp-row { margin: 0 4px 14px; }
+.pp-h { font-size: 12px; font-weight: 500; margin: 0 0 6px; }
+.pp-k { font-size: 12px; color: var(--sub); line-height: 1.7; margin: 6px 0 0; }
+.pp-k b { color: var(--ink); font-weight: 500; }
+.pp-k b.em-terra { color: var(--terra); }
+
+/* 文字入りのバナーはFVの写真のズームをかけない */
+.motion .fv .photo.banner img { animation: none; }
